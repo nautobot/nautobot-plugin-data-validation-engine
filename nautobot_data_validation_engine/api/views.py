@@ -1,45 +1,17 @@
-"""API views."""
+"""API views for nautobot_data_validation_engine."""
 
-from nautobot.extras.api.views import NautobotModelViewSet
+from nautobot.apps.api import NautobotModelViewSet
 
 from nautobot_data_validation_engine import filters, models
 from nautobot_data_validation_engine.api import serializers
 
 
-class RegularExpressionValidationRuleViewSet(NautobotModelViewSet):
-    """View to manage regular expression validation rules."""
+class ValidationRuleViewSet(NautobotModelViewSet):  # pylint: disable=too-many-ancestors
+    """ValidationRule viewset."""
 
-    queryset = models.RegularExpressionValidationRule.objects.all()
-    serializer_class = serializers.RegularExpressionValidationRuleSerializer
-    filterset_class = filters.RegularExpressionValidationRuleFilterSet
+    queryset = models.ValidationRule.objects.all()
+    serializer_class = serializers.ValidationRuleSerializer
+    filterset_class = filters.ValidationRuleFilterSet
 
-
-class MinMaxValidationRuleViewSet(NautobotModelViewSet):
-    """View to manage min max expression validation rules."""
-
-    queryset = models.MinMaxValidationRule.objects.all()
-    serializer_class = serializers.MinMaxValidationRuleSerializer
-    filterset_class = filters.MinMaxValidationRuleFilterSet
-
-
-class RequiredValidationRuleViewSet(NautobotModelViewSet):
-    """View to manage min max expression validation rules."""
-
-    queryset = models.RequiredValidationRule.objects.all()
-    serializer_class = serializers.RequiredValidationRuleSerializer
-    filterset_class = filters.RequiredValidationRuleFilterSet
-
-
-class UniqueValidationRuleViewSet(NautobotModelViewSet):
-    """View to manage min max expression validation rules."""
-
-    queryset = models.UniqueValidationRule.objects.all()
-    serializer_class = serializers.UniqueValidationRuleSerializer
-    filterset_class = filters.UniqueValidationRuleFilterSet
-
-
-class DataComplianceAPIView(NautobotModelViewSet):
-    """API Views for DataCompliance."""
-
-    queryset = models.DataCompliance.objects.all()
-    serializer_class = serializers.DataComplianceSerializer
+    # Option for modifying the default HTTP methods:
+    # http_method_names = ["get", "post", "put", "patch", "delete", "head", "options", "trace"]
