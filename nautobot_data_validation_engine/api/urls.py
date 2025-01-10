@@ -4,8 +4,22 @@ from nautobot.apps.api import OrderedDefaultRouter
 
 from nautobot_data_validation_engine.api import views
 
-router = OrderedDefaultRouter()
+router = OrderedDefaultRouter(view_name="Data Validation Engine")
 # add the name of your api endpoint, usually hyphenated model name in plural, e.g. "my-model-classes"
-router.register("validationrule", views.ValidationRuleViewSet)
+# Regular expression rules
+router.register("regex-rules", views.RegularExpressionValidationRuleViewSet)
+
+# Min/max rules
+router.register("min-max-rules", views.MinMaxValidationRuleViewSet)
+
+# Required rules
+router.register("required-rules", views.RequiredValidationRuleViewSet)
+
+# Unique rules
+router.register("unique-rules", views.UniqueValidationRuleViewSet)
+
+# Data Compliance
+router.register("data-compliance", views.DataComplianceAPIView)
+
 
 urlpatterns = router.urls
