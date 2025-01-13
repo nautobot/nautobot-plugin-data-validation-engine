@@ -115,6 +115,7 @@ class DataComplianceObjectView(ObjectView):
     """View for the Audit Results tab dynamically generated on specific object detail views."""
 
     template_name = "nautobot_data_validation_engine/datacompliance_tab.html"
+    queryset = None
 
     def dispatch(self, request, *args, **kwargs):
         """Set the queryset for the given object and call the inherited dispatch method."""
