@@ -1,4 +1,4 @@
-"""Django url patterns."""
+"""Django urlpatterns declaration for nautobot_data_validation_engine app."""
 
 from django.templatetags.static import static
 from django.urls import path
