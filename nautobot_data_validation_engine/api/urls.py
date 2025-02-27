@@ -22,4 +22,5 @@ router.register("unique-rules", views.UniqueValidationRuleViewSet)
 router.register("data-compliance", views.DataComplianceAPIView)
 
 
+app_name = "nautobot_data_validation_engine-api"
 urlpatterns = router.urls
