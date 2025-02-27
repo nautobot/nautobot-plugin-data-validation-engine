@@ -9,6 +9,7 @@ from nautobot.apps.urls import NautobotUIViewSetRouter
 from nautobot_data_validation_engine import views
 
 
+app_name = "nautobot_data_validation_engine"
 router = NautobotUIViewSetRouter()
 
 router.register("validationrule", views.ValidationRuleUIViewSet)
