@@ -8,6 +8,7 @@ from nautobot.extras.views import ObjectChangeLogView, ObjectNotesView
 
 from nautobot_data_validation_engine import models, views
 
+app_name = "nautobot_data_validation_engine"
 router = NautobotUIViewSetRouter()
 router.register("data-compliance", views.DataComplianceListView)
 router.register("regex-rules", views.RegularExpressionValidationRuleUIViewSet)
